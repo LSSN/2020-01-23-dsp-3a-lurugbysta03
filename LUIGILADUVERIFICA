@@ -1,0 +1,19 @@
+// la sintesi sottrattiva è : un modello di sintesi di suono che viene utilizzato nella musica elettronica prodotta
+da oscillatori o parziali, ricca di armoniche, la facciamo filtrare da un punto di vista spettrale 
+sottraendo o modulando delle bande di freqenza o singole parti.
+Comprende : sonogramma, spettogramma e una forma d'onda.
+Lo spettrogramma e la rappresentazione grafica dell' intensità del suono, nel tempo e nella frequenza, diciamo 
+la sua rappresentazione reale.
+
+
+// Il sonogramma analizza la frequenza che si muove nel tempo. L'unico strumento che puo analizzare il sonogramma e
+il "glissando".
+
+
+// si dividono in due filtri che sono LOWPASS (passa - basso) e highpass (passa - basso) sono due filtrio equalizzatori che hanno una sola frequenza dove viene tagliato dai filtri che ci faranno solo sentire le frequenze che stanno all'interno di quell taglio.
+
+
+import("stdfaust.lib");
+process = fi.lowpass (order,fcut) : fi.highpass (order,fcut);
+fcut = vslider("cut-off [style:knob][scale.exp]" ,1000, 20 , 20000,1);
+order = 128;
